@@ -124,7 +124,7 @@ def scan_server(servers: list, ip_type: str):
     
     scanner = nmap.PortScanner()
     # start scan
-    scanner.scan(nmap_style_servers_str, nmap_style_ports_str)
+    scanner.scan(nmap_style_servers_str, nmap_style_ports_str, arguments='-Pn')
     # get csv 
     raw_report = scanner.csv()
     # replace ';' with ',' in csv
