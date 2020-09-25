@@ -1,4 +1,4 @@
-# ssg-security-scripts
+# Cyber Security
 
 This will contain security related files, configs, scripts and services.
 
