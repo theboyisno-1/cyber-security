@@ -1,0 +1,6 @@
+slack_api_token: xoxb-xxxxxxxxxxxxxxx-xxxxxxxxxxxxxxx-xxxxxxxxxxxxxxx
+slack_channel: 'XXXXXXXX'
+server_with_ip:
+    - name: localhost
+      public_ip: 127.0.0.1
+      private_ip: 127.0.0.1
