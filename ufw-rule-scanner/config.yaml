@@ -1,0 +1,12 @@
+slack_api_token: xoxb-xxxxxxxxxxxxxxx-xxxxxxxxxxxxxxx-xxxxxxxxxxxxxxx
+slack_channel: 'XXXXXXXX'
+ssh_user: test
+ssh_key_path: '/home/test/.ssh/id_rsa'
+ufw_servers:
+    - type: mongodb
+      expect_rule_for_ports:
+        - 27017
+        - 22
+      servers:
+        - name: localhost
+          ip: 127.0.0.1
