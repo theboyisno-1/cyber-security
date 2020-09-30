@@ -85,7 +85,7 @@ def send_slack_notif(file_path: str):
         response = client.files_upload(
             channels=SLACK_CHANNEL,
             file=file_path,
-            title=f"SSG infra security: ufw scan report -> {file_path}",
+            title=f"UFW scan report -> {file_path}",
             filename=file_path,
             filetype='yaml',
         )
