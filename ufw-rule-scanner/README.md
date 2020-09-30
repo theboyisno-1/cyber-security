@@ -1,15 +1,13 @@
-# PORT SCANNER
+# UFW Rule Scanner
 
 ## About
 
-The `scanner.py` script will scan open ports on server and generate report
+The `scanner.py` script will scan ufw rules on server and generate report
 
 ## Script positional parameters
 
 1. Path to configuration.yaml file
 2. key name of server mapping
-3. Scan using private or public IPs
-    -  <span style="color: black;background-color: #F9F69A">NOTE: provide IP type, not the IP i.e private_ip | public_ip</span>
 
 ## YAML config format
 
@@ -18,10 +16,14 @@ Below is the key/value mapping for config.yaml file
 ```YAML
 slack_api_token: <SLACK API TOKEN>
 slack_channel: '<SLACK CHANNEL CODE>'
-server_with_ip:
-    - name: <name of server>
-    public_ip: <public ip>
-    private_ip: <private ip>
+ssh_user: <SSH username>
+ssh_key_path: '<SSH private key full path>'
+ufw_servers:
+    - type: <server category eg. mongodb|postgres|etc>
+      expect_rule_for_ports: [<List of allowed ports>]
+      servers:
+        - name: <Server name>
+          ip: <Public IP>
 ```
 
 ## Usage
@@ -31,4 +33,4 @@ server_with_ip:
 3. Install required pip modules: `pip3 install -r requirements.txt`
 4. Run the script after changing placeholder text as per requirement:
 
-    `python3 scanner.py </path/to/config>.yaml <key_name_of_server_mapping> <private_ip | public_ip>`
+    `python3 scanner.py </path/to/config>.yaml <key_name_of_server_mapping>`
